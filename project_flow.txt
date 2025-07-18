@@ -1,0 +1,48 @@
+Task Overview:
+
+The Shelter Management System will have the following core functionalities:
+
+1. Admin Features:
+Animal Profile Management:
+Create, update, and delete profiles for animals available for adoption.
+Include details such as species, breed, age, health status, and adoption status.
+Request Management:
+View and review adoption requests submitted by users.
+Approve or reject requests based on suitability.
+
+2. User Features:
+Read-Only Access:
+Browse available animal profiles with detailed information.
+Filter and search animals by species, breed, or other criteria.
+Adoption Request:
+Submit a request to adopt an animal.
+View the status of submitted requests (e.g., Pending, Approved, Rejected).
+
+3. Workflow:
+Users browse animal profiles and submit adoption requests.
+Admins review requests and take action (approve/reject).
+Upon approval, the user receives a confirmation and further instructions for the adoption process.
+
+Responsibilities:
+Design and implement RESTful APIs for the Shelter Management System using Django REST Framework.
+Develop robust models for managing animal profiles, user requests, and admin actions.
+Implement role-based access control (RBAC) to differentiate admin and user permissions.
+Ensure data validation and error handling in the adoption workflow.
+
+API ENDPOINTS:
+POST /api/signup/ – User registration endpoint.
+POST /api/login/ – User login endpoint.
+GET /api/animals/ – Get a list of animal profiles (accessible by users).
+POST /api/adoption-requests/ – Submit an adoption request (accessible by users).
+GET /api/adoption-requests/ – Get a list of adoption requests (accessible by admins).
+PATCH /api/adoption-requests/{id}/ – Approve or reject an adoption request (admin only).
+GET /api/adoption-requests/{id}/ – View the status of a specific adoption request (user/admin).
+
+Thanks
+
+
+Models:
+    animals -> species, breed, age, health_status, adoption_status, create_at, modified_at
+    adoption_request - > user, animal, status
+
+apps -> user, animal, common
